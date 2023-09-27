@@ -19,13 +19,15 @@ jobs:
     - name: Update the definitions
       run: nix develop -c just
 
-    - name: Prevent flake.lock from being committed
-      run: rm -f flake.lock
-
     - name: Check the output
       run: |
         nix flake check
         nix eval .#data --json | jq
+
+    - name: Prevent flake.lock from being committed
+      run: |
+        rm -f flake.lock
+        git rm -f --cached flake.lock
 
     - name: Create Pull Request
       uses: peter-evans/create-pull-request@v5
