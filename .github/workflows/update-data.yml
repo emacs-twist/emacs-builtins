@@ -19,6 +19,9 @@ jobs:
     - name: Update the definitions
       run: nix develop -c just
 
+    - name: Prevent flake.lock from being committed
+      run: rm -f flake.lock
+
     - name: Check the output
       run: |
         nix flake check
