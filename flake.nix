@@ -5,6 +5,11 @@
     emacs-ci.url = "github:purcell/nix-emacs-ci";
   };
 
+  nixConfig = {
+    extra-substituters = ["https://emacs-ci.cachix.org"];
+    extra-trusted-public-keys = ["emacs-ci.cachix.org-1:B5FVOrxhXXrOL0S+tQ7USrhjMT5iOPH+QN9q0NItom4="];
+  };
+
   outputs = {
     systems,
     nixpkgs,
@@ -49,9 +54,13 @@
             name = "${emacsName}.nix";
             path =
               pkgs.runCommand "build-${emacsName}-builtins-nix" {
+                buildInputs = [emacsPackage];
               } ''
+                EMACS_VERSION="$(emacs --version \
+                  | grep -F "GNU Emacs" \
+                  | grep -oE "[[:digit:]]+(:?\.[[:digit:]]+)+")"
                 echo >>$out '{'
-                echo >>$out '  version = "${emacsPackage.version}";'
+                echo >>$out "  version = \"''${EMACS_VERSION}\";"
                 echo >>$out '  libraries = ['
                 sed -e 's/^/"/' -e 's/$/"/' ${(pkgs.emacsTwist {
                     inherit emacsPackage;
