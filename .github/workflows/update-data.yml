@@ -4,6 +4,7 @@ on:
   schedule:
     - cron: '0 15 * * 1'
   workflow_dispatch:
+  pull_request:
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
@@ -42,7 +43,8 @@ jobs:
       with:
         title: 'Update the library lists'
         commit-message: 'chore: Update the library lists'
-        branch: automation/update
+        branch: "automation/update-library-lists-${{ github.ref_name }}"
+        base: master
         delete-branch: true
         add-paths: generated
         labels: automation,update
