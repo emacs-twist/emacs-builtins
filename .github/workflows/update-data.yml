@@ -22,6 +22,7 @@ jobs:
     - name: Check the output
       run: |
         nix flake check
+        git add ./generated
         nix eval .#data --json | jq
 
     - name: Prevent flake.lock from being committed
