@@ -44,6 +44,7 @@ jobs:
         title: 'Update the library lists'
         commit-message: 'chore: Update the library lists'
         branch: "automation/update-library-lists-${{ github.ref_name }}"
+        base: master
         delete-branch: true
         add-paths: generated
         labels: automation,update
