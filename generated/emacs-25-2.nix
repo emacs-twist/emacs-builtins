@@ -1,5 +1,5 @@
 {
-  version = "25.2";
+  version = "25.2.1";
   libraries = [
 "5x5"
 "AT386"
