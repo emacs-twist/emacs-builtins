@@ -28,7 +28,7 @@ jobs:
 
     - name: Check the output
       run: |
-        nix flake check
+        nix flake check --print-build-logs
         git add ./generated
         nix eval .#data --json | jq
 
