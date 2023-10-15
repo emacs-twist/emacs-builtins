@@ -44,7 +44,7 @@
             name = "default.nix";
             path = pkgs.writeText "emacs-builtins-default-nix" ''{${
                 lib.concatMapStrings (
-                  name: "${name} = (import ./${name}.nix).libraries;\n"
+                  name: "${name} = import ./${name}.nix;\n"
                 )
                 (builtins.attrNames emacsPackages)
               }}'';
