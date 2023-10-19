@@ -13,6 +13,7 @@
   outputs = {
     systems,
     nixpkgs,
+    self,
     ...
   } @ inputs: let
     inherit (nixpkgs) lib;
@@ -32,6 +33,18 @@
     emacsPackages = inputs.emacs-ci.packages.x86_64-linux;
   in {
     data = import ./generated;
+
+    lib.builtinLibrariesOfEmacsVersion = targetVersion: let
+      xs =
+        builtins.map ({libraries, ...}: libraries)
+        (
+          builtins.filter ({version, ...}: version == targetVersion)
+          (builtins.attrValues self.data)
+        );
+    in
+      if builtins.length xs > 0
+      then builtins.head xs
+      else null;
 
     devShells = eachSystem (pkgs: {
       default = pkgs.mkShell {buildInputs = [pkgs.just];};
