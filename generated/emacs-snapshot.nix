@@ -371,6 +371,7 @@
 "erc-truncate"
 "erc-xdcc"
 "ert"
+"ert-font-lock"
 "ert-x"
 "erts-mode"
 "esh-arg"
