@@ -386,6 +386,7 @@
 "esh-var"
 "eshell"
 "etags"
+"etags-regen"
 "ethio-util"
 "ethiopic"
 "eudc"
