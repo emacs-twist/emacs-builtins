@@ -15,6 +15,7 @@ emacs-27-2 = import ./emacs-27-2.nix;
 emacs-28-1 = import ./emacs-28-1.nix;
 emacs-28-2 = import ./emacs-28-2.nix;
 emacs-29-1 = import ./emacs-29-1.nix;
+emacs-29-2 = import ./emacs-29-2.nix;
 emacs-release-snapshot = import ./emacs-release-snapshot.nix;
 emacs-snapshot = import ./emacs-snapshot.nix;
 }
