@@ -1321,6 +1321,7 @@
 "viper-macs"
 "viper-mous"
 "viper-util"
+"visual-wrap"
 "vt-control"
 "vt100"
 "vt100-led"
