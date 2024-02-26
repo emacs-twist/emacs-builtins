@@ -1205,6 +1205,7 @@
 "trace"
 "tramp"
 "tramp-adb"
+"tramp-androidsu"
 "tramp-archive"
 "tramp-cache"
 "tramp-cmds"
