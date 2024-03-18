@@ -635,7 +635,6 @@
 "ld-script"
 "ldap"
 "ldefs-boot"
-"legacy-gnus-agent"
 "less-css-mode"
 "let-alist"
 "life"
