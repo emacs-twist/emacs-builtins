@@ -894,6 +894,7 @@
 "org-datetree"
 "org-duration"
 "org-element"
+"org-element-ast"
 "org-entities"
 "org-faces"
 "org-feed"
