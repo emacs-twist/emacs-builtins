@@ -973,6 +973,7 @@
 "pgtk-dnd"
 "pgtk-win"
 "philippine"
+"php-ts-mode"
 "picture"
 "pixel-fill"
 "pixel-scroll"
