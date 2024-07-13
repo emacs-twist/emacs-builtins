@@ -1,5 +1,7 @@
 This flake exports the list of builtin libraries of each Emacs version.
 
+This is used in [Rice](https://github.com/emacs-twist/elisp-rice) to expose
+Emacs Lisp packages to the flake while avoiding IFD.
 ## Usage
 
 ``` nix
