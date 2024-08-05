@@ -178,6 +178,7 @@
 "compile"
 "completion"
 "composite"
+"cond-star"
 "conf-mode"
 "cookie1"
 "copyright"
