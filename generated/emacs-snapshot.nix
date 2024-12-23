@@ -1231,6 +1231,7 @@
 "transient"
 "treesit"
 "tty-colors"
+"tty-tip"
 "tutorial"
 "tv-util"
 "tvi970"
