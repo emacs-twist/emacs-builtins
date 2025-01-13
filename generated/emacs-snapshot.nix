@@ -1347,6 +1347,7 @@
 "windmove"
 "window"
 "window-tool-bar"
+"window-x"
 "winner"
 "woman"
 "word-wrap-mode"
