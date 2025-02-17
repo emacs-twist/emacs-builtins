@@ -715,6 +715,7 @@
 "mh-utils"
 "mh-xface"
 "mhtml-mode"
+"mhtml-ts-mode"
 "midnight"
 "minibuf-eldef"
 "minibuffer"
