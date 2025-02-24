@@ -680,6 +680,7 @@
 "mantemp"
 "map"
 "map-ynp"
+"markdown-ts-mode"
 "master"
 "mb-depth"
 "md4"
