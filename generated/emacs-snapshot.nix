@@ -1333,6 +1333,7 @@
 "vt100-led"
 "vtable"
 "w32-fns"
+"w32-nt"
 "w32-vars"
 "w32-win"
 "w32console"
