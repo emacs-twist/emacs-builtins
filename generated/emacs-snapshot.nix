@@ -1232,6 +1232,7 @@
 "trampver"
 "transient"
 "treesit"
+"treesit-x"
 "tty-colors"
 "tty-tip"
 "tutorial"
