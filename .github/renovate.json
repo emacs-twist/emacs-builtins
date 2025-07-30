@@ -1,8 +1,7 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
-    "config:recommended",
-    "helpers:pinGitHubActionDigests"
+    "config:recommended"
   ],
   "labels": [
     "automation",
@@ -18,23 +17,12 @@
         "schedule:earlyMondays"
       ],
       "automerge": true
-    },
-    {
-      "matchManagers": [
-        "github-actions"
-      ],
-      "groupName": "actions",
-      "separateMajorMinor": false,
-      "automerge": true
     }
   ],
   "automergeSchedule": [
     "before 7pm"
   ],
   "lockFileMaintenance": {
-    "enabled": true
-  },
-  "github-actions": {
     "enabled": true
   },
   "nix": {
