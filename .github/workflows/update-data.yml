@@ -41,7 +41,7 @@ jobs:
         git rm -f --cached flake.lock
 
     - name: Create Pull Request
-      uses: peter-evans/create-pull-request@84ae59a2cdc2258d6fa0732dd66352dddae2a412 # v7
+      uses: peter-evans/create-pull-request@98357b18bf14b5342f975ff684046ec3b2a07725 # v7
       with:
         title: 'Update the library lists'
         commit-message: 'chore: Update the library lists'
