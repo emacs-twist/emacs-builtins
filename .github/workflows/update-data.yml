@@ -16,37 +16,38 @@ jobs:
   update:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6
 
-    - uses: cachix/install-nix-action@8aa03977d8d733052d78f4e008a241fd1dbf36b3 # v31.10.6
-      with:
-        extra_nix_config: |
-          accept-flake-config = true
+      - uses: cachix/install-nix-action@8aa03977d8d733052d78f4e008a241fd1dbf36b3 # v31.10.6
+        with:
+          extra_nix_config: |
+            accept-flake-config = true
 
-    - name: Update the Emacs package set
-      run: nix flake update
+      - name: Update the Emacs package set
+        run: nix flake update
 
-    - name: Update the definitions
-      run: nix develop -c just
+      - name: Update the definitions
+        run: nix develop -c just
 
-    - name: Check the output
-      run: |
-        nix flake check --print-build-logs
-        git add ./generated
-        nix eval .#data --json | jq
+      - name: Check the output
+        run: |
+          nix flake check --print-build-logs
+          git add ./generated
+          nix eval .#data --json | jq
 
-    - name: Prevent flake.lock from being committed
-      run: |
-        rm -f flake.lock
-        git rm -f --cached flake.lock
+      - name: Prevent flake.lock from being committed
+        run: |
+          rm -f flake.lock
+          git rm -f --cached flake.lock
 
-    - name: Create Pull Request
-      uses: peter-evans/create-pull-request@5f6978faf089d4d20b00c7766989d076bb2fc7f1 # v8
-      with:
-        title: 'Update the library lists'
-        commit-message: 'chore: Update the library lists'
-        branch: "automation/update-library-lists-${{ github.ref_name }}"
-        base: master
-        delete-branch: true
-        add-paths: generated
-        labels: automation,update
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@5f6978faf089d4d20b00c7766989d076bb2fc7f1 # v8
+        with:
+          title: 'Update the library lists'
+          commit-message: 'chore: Update the library lists'
+          branch: "automation/update-library-lists-${{ github.ref_name }}"
+          base: master
+          delete-branch: true
+          add-paths: generated
+          labels: automation,update
+
